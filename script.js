@@ -2,7 +2,7 @@
 var questionEl = document.getElementById("question");
 var answerEl = document.getElementById("answers");
 var scoreEl = document.getElementById("results");
-
+var restartEl = document.getElementById("restart")
 var timerEl = document.getElementById("timer");
 //set a time
 var timeLeft = 60;
@@ -100,11 +100,16 @@ function quizQuestions () {
         progressEl.removeAttribute("style");
     };
 
-    //showing results
+     //showing results
     var showScore = function() {
         document.getElementById("quiz").classList.add("hidden");
         document.getElementById("results").classList.remove("hidden");
+        document.getElementById("restart").classList.remove("hidden");
         scoreEl.textContent = "Score: " + timeLeft;
+        
+       
     };
+
+    
 
     document.querySelector("#start-btn").addEventListener("click", codeQuiz);
