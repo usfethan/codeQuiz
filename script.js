@@ -104,7 +104,7 @@ function quizQuestions () {
     var showScore = function() {
         document.getElementById("quiz").classList.add("hidden");
         document.getElementById("results").classList.remove("hidden");
-        scoreEl.textContent = "Score" + timeLeft;
+        scoreEl.textContent = "Score: " + timeLeft;
     };
 
     document.querySelector("#start-btn").addEventListener("click", codeQuiz);
