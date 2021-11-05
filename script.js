@@ -20,7 +20,7 @@ const questionContainerArr = [
     {question: "Which method will you use to round the number 24.76 to the nearest integer?", answers:["round(24.76", "rnd(24.76)", "Math.round(24.76)", "Math.rnd(24.76)"], correctAnswer: "Math.round(24.76)"},
 
     {question: "Which of the following statements will show a message as well as ask for user input in a popup?", answers: ["alert()", "prompt()", "confirm()", "message()"], correctAnswer: "prompt()" }
-]
+];
 
 //starting quiz and timer..//
 
@@ -48,6 +48,7 @@ function startTimer () {
 
 
 function quizQuestions () {
+    
     questionNumber ++
 
     questionEl.textContent = questionContainerArr[questionNumber].question
@@ -55,12 +56,16 @@ function quizQuestions () {
     answerEl.innerHTML = "";
 
     //for correct answer
-    var answers = questionContainerArr[questionNumber].correctAnswer;
+    var answers = questionContainerArr[questionNumber].answers;
+
+    answer = questionContainerArr[questionNumber].correctAnswer;
 
     //generating next question//
     for(var i = 0; i < answers.length; i++) {
         var nextAnswer = document.createElement("button");
         nextAnswer.textContent = answers[i];
+
+        answerBtn = answerEl.appendChild(nextAnswer);
     }
 };
 
@@ -69,7 +74,7 @@ function quizQuestions () {
     answerEl.addEventListener("click", function(event) {
         var progressEl = document.getElementsByClassName("progress") [0]
 
-        if(answers === event.target.textContent) {
+        if(answer === event.target.textContent) {
      //correct answer//
             progressEl.textContent = "**Correct Answer**"
             setTimeout(hideProgress, 3000);
@@ -89,7 +94,13 @@ function quizQuestions () {
         var progressEl = document.getElementsByClassName("progress") [0]
         progressEl.removeAttribute("style");
     };
-    //showing score
+
+    function showProgress() {
+        var progressEl = document.getElementsByClassName("progress") [0]
+        progressEl.removeAttribute("style");
+    };
+
+    //showing results
     var showScore = function() {
         document.getElementById("quiz").classList.add("hidden");
         document.getElementById("results").classList.remove("hidden");
