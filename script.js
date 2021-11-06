@@ -2,7 +2,7 @@
 var questionEl = document.getElementById("question");
 var answerEl = document.getElementById("answers");
 var scoreEl = document.getElementById("results");
-var restartEl = document.getElementById("restart")
+
 var timerEl = document.getElementById("timer");
 //set a time
 var timeLeft = 60;
@@ -41,10 +41,11 @@ function startTimer () {
         //if times up and questions done clear time- showscore//
         if(timeLeft === 0 || questionNumber === questionContainerArr.length) {
             clearInterval(timer);
-            setTimeout(showScore, 200);
+            setTimeout(showScore, 20);
         }
     }, 1000);
 };
+
 
 
 function quizQuestions () {
@@ -90,6 +91,8 @@ function quizQuestions () {
         quizQuestions();
     });
 
+ 
+
     function hideProgress() {
         var progressEl = document.getElementsByClassName("progress") [0]
         progressEl.removeAttribute("style");
@@ -104,12 +107,9 @@ function quizQuestions () {
     var showScore = function() {
         document.getElementById("quiz").classList.add("hidden");
         document.getElementById("results").classList.remove("hidden");
-        document.getElementById("restart").classList.remove("hidden");
-        scoreEl.textContent = "Score: " + timeLeft;
         
-       
+        scoreEl.textContent = "Score: " + timeLeft;      
     };
 
-    
-
     document.querySelector("#start-btn").addEventListener("click", codeQuiz);
+    
