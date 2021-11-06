@@ -1,5 +1,6 @@
 https://usfethan.github.io/codeQuiz/
-<img width="842" alt="codeQuiz main screen" src="https://user-images.githubusercontent.com/77454834/140548133-6fe787bc-fdbd-422f-9a02-8aea49063f79.png">
+
+<img width="894" alt="codequizScrnSht" src="https://user-images.githubusercontent.com/77454834/140611300-8f7f1440-5a9d-46b4-b32b-2ccf80919235.png">
 
 
 # 04 Web APIs: Code Quiz
